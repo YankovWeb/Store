@@ -5,7 +5,7 @@ import {Product} from '../types';
 import {NavigatorsNames} from './navigatorsNames';
 
 export type StackParamList = {
-  Catalog: undefined;
+  Catalog: JSX.Element;
   Details: {item: Product};
 };
 
