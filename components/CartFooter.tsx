@@ -1,7 +1,6 @@
 import {View, Text, StyleSheet, Alert} from 'react-native';
-import Button from './Button';
-
 import {useState} from 'react';
+import Button from './Button';
 import CheckoutForm from './CheckoutForm';
 
 interface CardFooterProps {
