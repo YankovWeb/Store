@@ -2,10 +2,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Catalog from '../views/Catalog';
 import Details from '../views/Details';
 import {Product} from '../types';
-import {NavigatorsNames} from './navigatorsNames';
 
 export type StackParamList = {
-  Catalog: JSX.Element;
+  Catalog: undefined;
   Details: {item: Product};
 };
 
@@ -14,17 +13,17 @@ const StackNavigation = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName={NavigatorsNames.Catalog}
+      initialRouteName="Catalog"
       screenOptions={{
         headerTitleAlign: 'center',
       }}
     >
       <Stack.Screen
-        name={NavigatorsNames.Catalog}
+        name="Catalog"
         component={Catalog}
-        options={{title: NavigatorsNames.Shop}}
+        options={{title: 'Shop'}}
       />
-      <Stack.Screen name={NavigatorsNames.Details} component={Details} />
+      <Stack.Screen name="Details" component={Details} />
     </Stack.Navigator>
   );
 };

@@ -15,7 +15,7 @@ const CartList = () => {
 
   const renderItem = useCallback(
     ({item}: {item: CartItem}) => <CartCard item={item} />,
-    []
+    [items]
   );
 
   const totalPrice: number = items.reduce(

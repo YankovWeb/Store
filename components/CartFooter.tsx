@@ -11,21 +11,24 @@ interface CardFooterProps {
 const CartFooter = ({totalPrice}: CardFooterProps) => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
-  const emptyCardMessage =
+  const emptyCartMessage =
     "Your cart is empty.\nWhen you add products, they'll\napper here.";
   const totalPriceMessage = `Total: $${totalPrice?.toFixed(2)}`;
+
+  const checkoutAlertEmptyCart =
+    'Your cart is empty, Please fill your cart to checkout';
 
   const handleShowForm = () =>
     totalPrice > 1
       ? setModalVisible(true)
-      : Alert.alert('Your cart is empty', 'Please fill your cart to checkout');
+      : Alert.alert(checkoutAlertEmptyCart);
 
   return (
     <>
       <CheckoutForm modalVisible={modalVisible} closeModal={setModalVisible} />
       <View style={styles.container}>
         <Text style={styles.total}>
-          {totalPrice ? totalPriceMessage : emptyCardMessage}
+          {totalPrice ? totalPriceMessage : emptyCartMessage}
         </Text>
         <Button
           style={styles.button}
