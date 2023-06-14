@@ -1,9 +1,10 @@
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {addItemToCart, removeItemFromCart} from '../features/cart/cartSlice';
 import Button from './Button';
 import {CartItem} from '../types';
 import {AnyAction, Dispatch} from '@reduxjs/toolkit';
+import {memo} from 'react';
 
 interface CartCardProps {
   item: CartItem;
@@ -42,7 +43,7 @@ const CartCard = ({item}: CartCardProps) => {
   );
 };
 
-export default CartCard;
+export default memo(CartCard);
 
 const styles = StyleSheet.create({
   itemContainer: {
