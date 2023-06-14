@@ -6,6 +6,7 @@ import Cart from '../views/Cart';
 import StackNavigation from './StackNavigation';
 import {selectCartTotalQuantity} from '../features/cart/cartSlice';
 import {useAppSelector} from '../store/store';
+import {NavigatorsNames} from './navigatorsNames';
 
 const Navigation = () => {
   const Tab = createMaterialBottomTabNavigator();
@@ -14,16 +15,16 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="Home"
+        initialRouteName={NavigatorsNames.Home}
         shifting={false}
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color}) => {
             let iconName: string = '';
-            if (route.name === 'Home') {
+            if (route.name === NavigatorsNames.Home) {
               iconName = focused ? 'ios-home' : 'ios-home-outline';
-            } else if (route.name === 'Shop') {
+            } else if (route.name === NavigatorsNames.Shop) {
               iconName = focused ? 'ios-list' : 'ios-list-outline';
-            } else {
+            } else if (route.name === NavigatorsNames.Cart) {
               iconName = focused ? 'ios-cart' : 'ios-cart-outline';
             }
 
@@ -31,10 +32,10 @@ const Navigation = () => {
           },
         })}
       >
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Shop" component={StackNavigation} />
+        <Tab.Screen name={NavigatorsNames.Home} component={Home} />
+        <Tab.Screen name={NavigatorsNames.Shop} component={StackNavigation} />
         <Tab.Screen
-          name="Cart"
+          name={NavigatorsNames.Cart}
           component={Cart}
           options={{tabBarBadge: totalQuantity}}
         />
