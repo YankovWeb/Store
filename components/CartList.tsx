@@ -13,7 +13,10 @@ const CartList = () => {
 
   const items = useAppSelector(selectCartItems);
 
-  const renderItem = ({item}: {item: CartItem}) => <CartCard item={item} />;
+  const renderItem = useCallback(
+    ({item}: {item: CartItem}) => <CartCard item={item} />,
+    []
+  );
 
   const totalPrice: number = items.reduce(
     (count: number, item: CartItem) => count + item.totalPrice,
