@@ -5,14 +5,12 @@ interface ErrorProps {
   errorMessage: string;
 }
 
-const Error = ({errorStatus, errorMessage}: ErrorProps) => {
-  return (
-    <View style={style.errorContainer}>
-      <Text>{errorStatus}</Text>
-      <Text>{errorMessage}</Text>
-    </View>
-  );
-};
+const Error = ({errorStatus, errorMessage}: ErrorProps) => (
+  <View style={style.errorContainer}>
+    <Text>{errorStatus}</Text>
+    <Text>{errorMessage}</Text>
+  </View>
+);
 
 export default Error;
 
