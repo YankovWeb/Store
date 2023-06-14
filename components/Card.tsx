@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
 import {addItemToCart} from '../features/cart/cartSlice';
 import {memo} from 'react';
-import {Dispatch} from '@reduxjs/toolkit';
+import {AnyAction, Dispatch} from '@reduxjs/toolkit';
 import Button from './Button';
 import ProductRating from './ProductRating';
 
@@ -13,7 +13,7 @@ interface CardProps {
 }
 
 const Card = ({item}: CardProps) => {
-  const dispatch = useDispatch<Dispatch>();
+  const dispatch = useDispatch<Dispatch<AnyAction>>();
 
   const navigation = useNavigation();
 
