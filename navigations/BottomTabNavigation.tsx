@@ -6,6 +6,7 @@ import Cart from '../views/Cart';
 import StackNavigation from './StackNavigation';
 import {selectCartTotalQuantity} from '../features/cart/cartSlice';
 import {useAppSelector} from '../store/store';
+import {StatusBar} from 'expo-status-bar';
 
 const Navigation = () => {
   const Tab = createMaterialBottomTabNavigator();
@@ -13,6 +14,8 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
+      <StatusBar style="dark" />
+
       <Tab.Navigator
         initialRouteName="Home"
         shifting={false}
