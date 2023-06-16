@@ -11,7 +11,7 @@ const CartFooter = ({totalPrice}: CardFooterProps) => {
   const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   const emptyCartMessage =
-    "Your cart is empty.\nWhen you add products, they'll\napper here.";
+    "Your cart is empty.\nWhen you add products, they'll\nappear here.";
   const totalPriceMessage = `Total: $${totalPrice?.toFixed(2)}`;
 
   const checkoutAlertEmptyCart =
