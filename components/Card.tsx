@@ -1,4 +1,4 @@
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Pressable} from 'react-native';
 import {Product} from '../types';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
@@ -27,18 +27,20 @@ const Card = ({item}: CardProps) => {
   return (
     <View style={styles.productContainer}>
       <Text style={styles.title}>{item.title}</Text>
-      <Image
-        source={{uri: item.image}}
-        style={styles.image}
-        resizeMode="contain"
-      />
-      <Text style={styles.price}>Price: ${item.price.toFixed(2)}</Text>
-      <Text style={styles.category}>Category: {item.category}</Text>
+      <Pressable onPress={() => handleViewDetails(item)}>
+        <Image
+          source={{uri: item.image}}
+          style={styles.image}
+          resizeMode="contain"
+        />
+        <Text style={styles.price}>Price: ${item.price.toFixed(2)}</Text>
+        <Text style={styles.category}>Category: {item.category}</Text>
 
-      <ProductRating
-        rate={item.rating?.rate ?? 0}
-        count={item.rating?.count ?? 0}
-      />
+        <ProductRating
+          rate={item.rating?.rate ?? 0}
+          count={item.rating?.count ?? 0}
+        />
+      </Pressable>
       <View style={styles.buttonContainer}>
         <Button
           innerText="Add to Cart"
