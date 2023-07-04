@@ -1,5 +1,4 @@
 import {FlatList} from 'react-native';
-import {useSelector} from 'react-redux';
 import {useCallback} from 'react';
 import CartCard from './CartCard';
 import CartListHeader from './CartListHeader';

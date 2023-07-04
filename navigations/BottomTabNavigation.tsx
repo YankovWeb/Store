@@ -15,7 +15,6 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <StatusBar style="dark" />
-
       <Tab.Navigator
         initialRouteName="Home"
         shifting={false}
